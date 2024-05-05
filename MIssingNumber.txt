@@ -1,0 +1,22 @@
+package Prg;
+
+public class MissingNumber {
+    public static void main(String[] args)
+    {
+        MissingNumber missingNum = new MissingNumber();
+        int[] nums= {0,1,3};
+        System.out.println(missingNum.missingNumber(nums));
+
+    }
+
+    private int missingNumber(int[] nums) {
+        int res = nums.length;
+        for(int i=0; i<nums.length; i++){
+            res ^= i;
+            res ^= nums[i];
+        }
+        return res;
+    }
+}
+
+
